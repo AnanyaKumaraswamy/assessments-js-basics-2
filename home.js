@@ -22,7 +22,10 @@
 */
 
 //CODE HERE
+console.log("Answer 1: ");
 
+const greetUser = (username) => 'Welcome back, '+ username;
+console.log(greetUser("Ananya"));
 
 
 
@@ -50,9 +53,25 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
+console.log("Answer 2a: ");
 
+function canWeDeliver(zipCode){
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(zipCode === deliveryAreaZipCodes[i]){
+            return "Hi!we can deliver to this address"+ zipCode;
+            
 
-
+        }
+       
+        
+    }
+    return "We are sorry.We don't deliver to the zipcode: "+ zipCode;
+}
+console.log(canWeDeliver(85213));
+console.log(canWeDeliver(85205));
+console.log(canWeDeliver(85202));
+console.log(canWeDeliver(85203));
+console.log(canWeDeliver(85205));
 /* 
     Problem 2 Continued
 
@@ -71,8 +90,20 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
-
+console.log("Answer 2b: ");
+function canWeDeliverTwo(zipCode){
+    if(deliveryAreaZipCodes.includes(zipCode)){
+      return "Hi!we can deliver to this address: ";
+    }
+    else{
+        return "We are sorry.We don't deliver to this address";
+      }
+  }
+  console.log(canWeDeliverTwo(85213));
+  console.log(canWeDeliverTwo(85205));
+  console.log(canWeDeliverTwo(85202));
+  console.log(canWeDeliverTwo(85203));
+  console.log(canWeDeliverTwo(85201));
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -85,6 +116,7 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
     Read on for more instructions.
 */
+
 
 const deals = [
     {
@@ -105,10 +137,10 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
+console.log("Answer3a: ");
 //CODE HERE
-
-
+deals[0].title = deals[0].title.replace("15","10");
+console.log(deals);
 
 /*
     The restaurant is going to continue its
@@ -122,5 +154,7 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-
+console.log("Answer3b: ");
 //CODE HERE
+deals[1].desc = deals[1].desc.replace("March","April").trim();
+console.log(deals);
