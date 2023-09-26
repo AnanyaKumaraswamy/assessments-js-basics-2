@@ -21,6 +21,17 @@
 
 //CODE HERE
 
+class employee{
+    constructor( name, shifts ){
+        this.name = name;
+        this.shifts = shifts
+      }
+
+      getSchedule(){
+        console.log(this.name, 'works on', this.shifts, '.');
+      }
+}
+console.log(employee);
 
 
 /*
@@ -32,15 +43,21 @@
     name: Jess
     shifts: weekday mornings, weekday afternoons
 */
-
+console.log("Answer 1a: ");
 //CODE HERE
+const empOne = new employee('Tej', 'weekday mornings');
+
+
+console.log(empOne);
 
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
-
+console.log("Answer 1b: ");
 //CODE HERE
+empOne.getSchedule();
+
 
 
 /*
@@ -54,9 +71,11 @@
     spread operator or reassign it using 
     dot or bracket notation.
 */
-
+console.log("Answer 1c: ");
 //CODE HERE
-
+const empTwo = empOne;
+empTwo.name = "Nick";
+console.log(empTwo);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -83,8 +102,20 @@
 */
 
 //CODE HERE
+class Manager extends employee{
+    constructor( name, shifts,employees ){
+        super(name, shifts);
+        this.employees = employees;
+      }
 
+      getEmployees(){
+        console.log(this.name, 'manages', this.employees, '.');
+      }
 
+      addEmployee(emp){        
+        this.employees.push(emp);        
+      }
+}
 
 /*
     Create a new instance of your class.
@@ -98,23 +129,25 @@
 */
 
 //CODE HERE
+const manager = new Manager('Winston', 'weekday mornings', ['Cece', 'Schmidt']);
+
 
 
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
-
+console.log("Answer 2a: ");
 //CODE HERE
-
+manager.getEmployees();
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
     'Coach' or whatever name you'd like.
 */
-
+console.log("Answer 2b: ");
 //CODE HERE 
-
+manager.addEmployee('Coach');
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -122,3 +155,4 @@
 */
 
 //CODE HERE
+manager.getEmployees();

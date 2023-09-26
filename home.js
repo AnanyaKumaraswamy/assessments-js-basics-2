@@ -58,14 +58,10 @@ console.log("Answer 2a: ");
 function canWeDeliver(zipCode){
     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
         if(zipCode === deliveryAreaZipCodes[i]){
-            return "Hi!we can deliver to this address"+ zipCode;
-            
-
-        }
-       
-        
+            return "Hi!we can deliver to this address.";            
+        }               
     }
-    return "We are sorry.We don't deliver to the zipcode: "+ zipCode;
+    return "We are sorry.We don't deliver to this address.";
 }
 console.log(canWeDeliver(85213));
 console.log(canWeDeliver(85205));
@@ -93,10 +89,10 @@ console.log(canWeDeliver(85205));
 console.log("Answer 2b: ");
 function canWeDeliverTwo(zipCode){
     if(deliveryAreaZipCodes.includes(zipCode)){
-      return "Hi!we can deliver to this address: ";
+      return "Hi!we can deliver to this address.";
     }
     else{
-        return "We are sorry.We don't deliver to this address";
+        return "We are sorry.We don't deliver to this address.";
       }
   }
   console.log(canWeDeliverTwo(85213));

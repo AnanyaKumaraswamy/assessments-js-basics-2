@@ -34,8 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
+console.log("Answer 1: ");
+const summedPrice = cart.reduce((total, curr) => total + curr.price, 0);
+console.log("Sum of all the food = " + summedPrice + "$");
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -52,10 +54,16 @@ const cart = [
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
-
+console.log("Answer 2: ")
 //CODE HERE
+function calcFinalPrice(carTotal, couponValue, tax){
 
-
+   let carTax = carTotal * tax;
+   //console.log(carTax);
+   const finalPrice = carTotal - couponValue + carTax;
+   return finalPrice;
+}
+console.log("Final price of the car is = " + calcFinalPrice(5000, 100, 0.06) + "$");
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -76,9 +84,14 @@ const cart = [
 
     Your object should have at least 4 properties. 
 */
-
+console.log("Answer 3: ");
 /*
     TEXT ANSWER HERE
+> I would like to have these 4 properties in the customer object:
+'firstname', 'lastname', phone-number and 'email'.
+> The firstname and lastname properties will help us in identification.
+> The phone-number is the most helpful information to contact the customer.
+> email-id helps us to inform the customer on any deals or any information.
 
 */
 
@@ -88,3 +101,16 @@ const cart = [
 */
 
 //CODE HERE
+class customer{   
+
+    constructor( firstname, lastname, phone, email ){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phone = phone;    
+        this.email = email;
+      }
+}
+
+const customerOne = new customer('Ananya', 'Kumaraswamy', 97298978, 'ananya.gmail.com');
+
+console.log("Customer one details: ",customerOne);
